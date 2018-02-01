@@ -14,24 +14,18 @@ describe('createSvgFavicon', function() {
     assert.equal(svg.match(/<svg [^>]*?width="([^"]*)"/i)[1], '100');
   });
 
-  it('should generate a rect tag with rx, ry, fill, stroke-width, stroke', function() {
+  it('should generate a rect tag with rx, ry, fill', function() {
     const rx = '50%';
     const ry = '50%';
     const backgroundColor = '#03f53a';
-    const borderWidth = '3';
-    const borderColor = '#3057fa';
     const svg = removeNewLines(createSvgFavicon({
       rx,
       ry,
       backgroundColor,
-      borderWidth,
-      borderColor,
     }));
     assert.equal(svg.match(new RegExp(`<rect [^>]*?rx="([^"]*)"`, 'i'))[1], rx);
     assert.equal(svg.match(new RegExp(`<rect [^>]*?ry="([^"]*)"`, 'i'))[1], ry);
     assert.equal(svg.match(new RegExp(`<rect [^>]*?fill="([^"]*)"`, 'i'))[1], backgroundColor);
-    assert.equal(svg.match(new RegExp(`<rect [^>]*?stroke-width="([^"]*)"`, 'i'))[1], borderWidth);
-    assert.equal(svg.match(new RegExp(`<rect [^>]*?stroke="([^"]*)"`, 'i'))[1], borderColor);
   });
 
   it('should generate a rect tag with rx, ry with value borderRadius', function() {
