@@ -1,0 +1,13 @@
+notifications:
+  email: false
+
+language: node_js
+node_js:
+  - "node"
+  - "lts/*"
+
+script:
+  - npm test
+
+after_success:
+  - npm run coverage
