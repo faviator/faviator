@@ -1,6 +1,5 @@
-# created by gitignorer
-# profile used: node
 *.sw*
 .DS_Store
+.nyc_output
 node_modules
 npm-debug.log*
