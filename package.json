@@ -1,0 +1,52 @@
+{
+  "name": "faviator",
+  "version": "1.0.0",
+  "description": "A simple easy favicon generator.",
+  "main": "index.js",
+  "scripts": {
+    "preversion": "git checkout master && git merge --squash dev && npm test",
+    "version": "git add -A",
+    "postversion": "git checkout - && git merge master -m 'Merge with master'",
+    "prepublishOnly": "git checkout master",
+    "postpublish": "git push && git push --tags && git checkout -",
+    "\n# TESTING SCRIPTS:": "",
+    "test": "nyc mocha --recursive",
+    "test:watch": "mocha --recursive --watch",
+    "coverage": "nyc report --reporter=lcov > coverage.lcov && codecov",
+    "lint:js": "eslint .",
+    "createTestPages": "node ./scripts/createTestPages.js",
+    "\n# HUSKY GIT HOOKS:": "",
+    "precommit": "lint-staged"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/ycmjason/faviator.git"
+  },
+  "keywords": [
+    "favicon",
+    "generator",
+    "generate",
+    "icon"
+  ],
+  "author": "Jason Yu <me@ycmjason.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ycmjason/faviator/issues"
+  },
+  "homepage": "https://github.com/ycmjason/faviator#readme",
+  "devDependencies": {
+    "@ycm.jason/eslint-config": "^1.0.0",
+    "codecov": "^3.0.0",
+    "eslint": "^4.16.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^6.1.0",
+    "mocha": "^5.0.0",
+    "nyc": "^11.4.1"
+  },
+  "dependencies": {
+    "sharp": "^0.19.0"
+  },
+  "lint-staged": {
+    "*.js": "npm run lint:js"
+  }
+}
