@@ -1,14 +1,14 @@
 {
   "name": "faviator",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A simple easy favicon generator.",
   "main": "index.js",
   "scripts": {
     "preversion": "git checkout master && git merge --squash dev && npm test",
     "version": "git add -A",
-    "postversion": "git checkout - && git merge master -m 'Merge with master'",
+    "postversion": "git checkout - && git merge master -m 'Merge with master' && git push",
     "prepublishOnly": "git checkout master",
-    "postpublish": "git push && git push --tags && git checkout -",
+    "postpublish": "git push && git push --tags && git checkout - && git push",
     "\n# TESTING SCRIPTS:": "",
     "test": "nyc mocha --recursive",
     "test:watch": "mocha --recursive --watch",
