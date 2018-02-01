@@ -1,6 +1,6 @@
 {
   "name": "faviator",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A simple easy favicon generator.",
   "main": "index.js",
   "scripts": {
