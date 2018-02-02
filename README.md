@@ -31,7 +31,7 @@ const config = {
   text: 'F',
   dx: 0,                        // move the text from the 'center' horizontally
   dy: 0,                        // move the text from the 'center' vertically
-  fontSize: 70, // change the font size
+  fontSize: 70,
   fontFamily: 'Dancing Script', // a font from Google Font
   fontColor: 'white',
   backgroundColor: '#4267b2',
