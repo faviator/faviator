@@ -8,7 +8,6 @@ const pkg = require('../package.json');
 
 const faviator = require('../index');
 
-
 program
   .version(pkg.version)
   .description(pkg.description)
@@ -30,15 +29,15 @@ program
 
 const { output } = program;
 
-if (!output) {
-  faviator.svg(program).then(buffer => buffer.toString()).then(console.log).catch(console.error);
+if (output) {
+  const ext = extname(output);
+
+  if (output && !['.svg', '.jpeg', '.jpg', '.png'].includes(ext)) {
+    console.error('\n  error: <path> extension must be .svg/.jpeg/.jpg/.png in output\n');
+    process.exit(1);
+  }
+
+  faviator[ext.substring(1)](program).then(buffer => fs.writeFileSync(output, buffer));
 }
 
-const ext = extname(output);
-
-if (output && !['.svg', '.jpeg', '.jpg', '.png'].includes(ext)) {
-  console.error('\n  error: <path> extension must be .svg/.jpeg/.jpg/.png in output\n');
-  process.exit(1);
-}
-
-faviator[ext.substring(1)](program).then(buffer => fs.writeFileSync(output, buffer));
+faviator.svg(program).then(buffer => buffer.toString()).then(console.log).catch(console.error);
