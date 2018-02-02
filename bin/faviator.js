@@ -45,4 +45,5 @@ function main(options) {
   faviator[ext.substring(1)](options).then(buffer => fs.writeFileSync(output, buffer));
 }
 
+if (process.argv.length <= 2) program.help();
 main(program);
