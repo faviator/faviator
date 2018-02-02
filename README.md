@@ -25,7 +25,7 @@ Faviator provides three functions that generate the favicon as svg, jpeg or png.
 
 #### config
 The config object takes in the following keys and generate the favicon correspondingly. Most values are self-explantory. The following values are the default values if it is not defined.
-```json
+```javascript
 const config = {
   size: 16,                     // the width and height of the generated image (in px) 
   text: 'F',
