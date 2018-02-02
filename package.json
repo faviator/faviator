@@ -19,6 +19,7 @@
     "precommit": "lint-staged"
   },
   "dependencies": {
+    "commander": "^2.13.0",
     "convert-svg-to-jpeg": "^0.3.3",
     "convert-svg-to-png": "^0.3.3"
   },
@@ -51,5 +52,8 @@
   "homepage": "https://github.com/ycmjason/faviator#readme",
   "lint-staged": {
     "*.js": "npm run lint:js"
+  },
+  "bin": {
+    "faviator": "./bin/faviator.js"
   }
 }

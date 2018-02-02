@@ -17,8 +17,20 @@ describe('faviator [index.js]', function() {
     this.faviator = proxyquire('../index', this.stubs);
   });
 
-  it('should wrap createSvgFavicon() in a Promise', function(next) {
-    this.faviator().then(svg => assert.equal(svg, createSvgFavicon())).then(() => next(), next);
+  it('should call .svg', function(next) {
+    sinon.stub(this.faviator, 'svg').resolves('hello');
+    this.faviator().then(v => {
+      assert.equal(v, 'hello');
+      assert(this.faviator.svg.called);
+    }).then(next);
+  });
+
+  describe('.svg', function() {
+    it('should wrap createSvgFavicon() in a Promise', function(next) {
+      this.faviator.svg().then(svg => {
+        assert.equal(svg.toString(), createSvgFavicon());
+      }).then(() => next(), next);
+    });
   });
 
   describe('.jpg', function() {
