@@ -18,7 +18,7 @@ program
   .option('--font-size <n>', 'Font size of the text', 80)
   .option('-f, --font-family <value>', 'Font family; please choose from Google Fonts', 'Dancing Script')
   .option('-c, --font-color <value>', 'Color name/hex/rgb', 'white')
-  .option('-B, --background-color <value>', 'Background color of favicon', '#4267b2')
+  .option('-B, --background-color <value>', 'Background color of favicon', 'rgb(219, 59, 211)')
   .option('--border-width <n>', 'Width of the border', 5)
   .option('-b, --border-color <value>', 'Color of the border', '#0D1423')
   .option('-R, --border-radius <n>', 'Short hand to set rx and ry', '5%')
@@ -27,9 +27,13 @@ program
   .option('-o, --output <path>', 'If not specified, svg will be printed to stdout. You can use .svg/.jpeg/.jpg/.png extensions.')
   .parse(process.argv);
 
-const { output } = program;
+function main(options) {
+  const { output } = options;
 
-if (output) {
+  if (!options.output) {
+    return faviator.svg(options).then(buffer => buffer.toString()).then(console.log).catch(console.error);
+  }
+
   const ext = extname(output);
 
   if (output && !['.svg', '.jpeg', '.jpg', '.png'].includes(ext)) {
@@ -37,7 +41,8 @@ if (output) {
     process.exit(1);
   }
 
-  faviator[ext.substring(1)](program).then(buffer => fs.writeFileSync(output, buffer));
+  console.log(`Writting to ${output}...`);
+  faviator[ext.substring(1)](options).then(buffer => fs.writeFileSync(output, buffer));
 }
 
-faviator.svg(program).then(buffer => buffer.toString()).then(console.log).catch(console.error);
+main(program);

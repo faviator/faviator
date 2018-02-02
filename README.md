@@ -1,6 +1,8 @@
 # faviator
 A simple easy favicon generator.
 
+![Logo](favicon.png)
+
 [![Build Status](https://travis-ci.org/ycmjason/faviator.svg?branch=master)](https://travis-ci.org/ycmjason/faviator)
 [![codecov](https://codecov.io/gh/ycmjason/faviator/branch/master/graph/badge.svg)](https://codecov.io/gh/ycmjason/faviator)
 
@@ -24,7 +26,9 @@ You can use faviator easily programatically or as a cli tool.
 Faviator provides three functions that generate the favicon as svg, jpeg or png. The API of the three functions are identical. They all return a promise that resolves to a `Buffer` that represents the favicon.
 
 #### config
-The config object takes in the following keys and generate the favicon correspondingly. Most values are self-explantory. The following values are the default values if it is not defined.
+The config object takes in the following keys and generate the favicon correspondingly. Most values are self-explantory.
+
+The following values are the default values if it is not defined. This defines the faviator's logo.
 ```javascript
 const config = {
   size: 16,                     // the width and height of the generated image (in px) 
@@ -34,7 +38,7 @@ const config = {
   fontSize: 70,
   fontFamily: 'Dancing Script', // a font from Google Font
   fontColor: 'white',
-  backgroundColor: '#4267b2',
+  backgroundColor: 'rgb(219, 59, 211)',
   borderWidth: 5,
   borderColor: '#0D1423',
   borderRadius,                 // rx and ry will be set to this if defined
