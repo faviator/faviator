@@ -35,7 +35,7 @@ const config = {
   text: 'F',
   dx: 0,                        // move the text from the 'center' horizontally
   dy: 0,                        // move the text from the 'center' vertically
-  fontSize: 70,
+  fontSize: 80,
   fontFamily: 'Dancing Script', // a font from Google Font
   fontColor: 'white',
   backgroundColor: 'rgb(219, 59, 211)',
@@ -160,10 +160,11 @@ Example:
 
 You can export the svg/jpeg/png to a file with the `-o` flag.
 ```
-> faviator -s 160 -backgroundColor 'rgb(37, 86, 209)' -o x.png
+> faviator -s 160 -background-color 'rgb(37, 86, 209)' -o x.png
 ```
 
 x.png:
+
 ![x.png](example/x.png)
 
 ## Author
