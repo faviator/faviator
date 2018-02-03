@@ -1,6 +1,6 @@
 {
   "name": "faviator",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A simple easy favicon generator.",
   "main": "index.js",
   "scripts": {
@@ -14,7 +14,6 @@
     "test:watch": "mocha --recursive --watch",
     "coverage": "nyc report --reporter=lcov > coverage.lcov && codecov",
     "lint:js": "eslint .",
-    "createTestPages": "node ./scripts/createTestPages.js",
     "\n# HUSKY GIT HOOKS:": "",
     "precommit": "lint-staged"
   },
