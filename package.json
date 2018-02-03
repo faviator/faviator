@@ -1,6 +1,6 @@
 {
   "name": "faviator",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A simple easy favicon generator.",
   "main": "index.js",
   "scripts": {
@@ -34,10 +34,6 @@
     "proxyquire": "^1.8.0",
     "sinon": "^4.2.2"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/ycmjason/faviator.git"
-  },
   "keywords": [
     "favicon",
     "generator",
@@ -46,14 +42,23 @@
   ],
   "author": "Jason Yu <me@ycmjason.com>",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ycmjason/faviator/issues"
-  },
-  "homepage": "https://github.com/ycmjason/faviator#readme",
   "lint-staged": {
     "*.js": "npm run lint:js"
   },
   "bin": {
     "faviator": "./bin/faviator.js"
-  }
+  },
+  "directories": {
+    "example": "example",
+    "lib": "lib",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/faviator/faviator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/faviator/faviator/issues"
+  },
+  "homepage": "https://github.com/faviator/faviator#readme"
 }
