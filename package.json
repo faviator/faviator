@@ -14,7 +14,6 @@
     "test:watch": "mocha --recursive --watch",
     "coverage": "nyc report --reporter=lcov > coverage.lcov && codecov",
     "lint:js": "eslint .",
-    "createTestPages": "node ./scripts/createTestPages.js",
     "\n# HUSKY GIT HOOKS:": "",
     "precommit": "lint-staged"
   },
