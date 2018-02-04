@@ -1,7 +1,7 @@
 const svg2jpeg = require('convert-svg-to-jpeg').convert;
 const svg2png = require('convert-svg-to-png').convert;
 
-const createSvgFavicon = require('./lib/createSvgFavicon');
+const createSvgFavicon = require('@faviator/create-svg-favicon');
 
 const faviator = (...args) => faviator.svg(...args);
 
