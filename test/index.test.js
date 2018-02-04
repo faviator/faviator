@@ -2,7 +2,7 @@ const assert = require('assert');
 const proxyquire = require('proxyquire');
 const sinon = require('sinon');
 
-const createSvgFavicon = require('../lib/createSvgFavicon');
+const createSvgFavicon = require('@faviator/create-svg-favicon');
 
 describe('faviator [index.js]', function() {
   beforeEach(function() {
