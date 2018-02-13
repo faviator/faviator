@@ -6,6 +6,11 @@ A simple easy favicon generator.
 
 ![Logo](favicon.png)
 
+## Playground
+Manually changing the config and generate the favicon to see the result might be time consuming. A faviator playground is created to allow us to tweak the config and view the result instantly.
+
+[Click here to go to the playground.](https://www.faviator.xyz/)
+
 ## Install
 
 ```
