@@ -1,5 +1,5 @@
 # faviator
-A simple easy favicon generator.
+> A simple easy favicon generator.
 
 [![Build Status](https://travis-ci.org/faviator/faviator.svg?branch=master)](https://travis-ci.org/faviator/faviator)
 [![codecov](https://codecov.io/gh/faviator/faviator/branch/master/graph/badge.svg)](https://codecov.io/gh/faviator/faviator)
@@ -13,20 +13,17 @@ Manually changing the config and generate the favicon to see the result might be
 
 ## Install
 
-```
-npm install --save-dev faviator
-```
-
-Or globally:
+CLI:
 ```
 npm install -g faviator
 ```
 
-## How to use
+Programatic API:
+```
+npm install --save-dev faviator
+```
 
-You can use faviator easily programatically or as a cli tool. 
-
-### CLI
+## How to use (CLI)
 
 ```
 > faviator -h
@@ -102,18 +99,25 @@ Example:
 
 You can export the svg/jpeg/png to a file with the `-o` flag.
 ```
-> faviator -s 160 -R 50% --font-size 55 -f tangerine --background-color 'rgb(37, 86, 209)' -o example/x.png --text 'f' --dx -5
+> faviator -s 160 \
+           --text 'f' \
+           --font-size '55' \
+           -f 'tangerine' \
+           --dx '-5' \
+           -R '50%' \
+           --background-color 'rgb(37, 86, 209)' \
+           -o example/x.png
 ```
 
 x.png:
 
 ![x.png](example/x.png)
 
-### Programatic API
+## How to use? (Programatic API)
 
 Faviator provides three functions that generate the favicon as svg, jpeg or png. The API of the three functions are identical. They all return a promise that resolves to a `Buffer` that represents the favicon.
 
-#### config
+### config
 The config object takes in the following keys and generate the favicon correspondingly. Most values are self-explantory.
 
 The following values are the default values if it is not defined. This defines the faviator's logo.
@@ -135,7 +139,7 @@ const config = {
 };
 ```
 
-#### faviator(config) / faviator.svg(config)
+### faviator(config) / faviator.svg(config)
 
 Example:
 ```javascript
@@ -148,7 +152,7 @@ faviator.svg(config)
 // output: the xml of the svg
 ```
 
-#### faviator.jpeg(config) / faviator.jpg(config)
+### faviator.jpeg(config) / faviator.jpg(config)
 
 Example: 
 ```
@@ -162,7 +166,7 @@ faviator.jpeg(config).then(buffer => fs.writeFileSync('favicon.jpg', buffer));
 faviator.jpg(config).then(buffer => fs.writeFileSync('favicon.jpg', buffer));
 ```
 
-#### faviator.png(config)
+### faviator.png(config)
 
 Example: 
 ```
