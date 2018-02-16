@@ -1,6 +1,6 @@
 {
   "name": "faviator",
-  "version": "0.1.6",
+  "version": "0.2.0",
   "description": "A simple easy favicon generator.",
   "main": "index.js",
   "scripts": {
@@ -18,21 +18,21 @@
     "precommit": "lint-staged"
   },
   "dependencies": {
-    "@faviator/create-svg-favicon": "^0.1.5",
-    "commander": "^2.13.0",
-    "convert-svg-to-jpeg": "^0.3.3",
-    "convert-svg-to-png": "^0.3.3"
+    "@faviator/create-svg-favicon": "^0.2.0",
+    "commander": "^2.14.1",
+    "convert-svg-to-jpeg": "^0.4.0",
+    "convert-svg-to-png": "^0.4.0"
   },
   "devDependencies": {
-    "@ycm.jason/eslint-config": "^1.0.0",
+    "@ycm.jason/eslint-config": "^1.1.0",
     "codecov": "^3.0.0",
-    "eslint": "^4.16.0",
+    "eslint": "^4.17.0",
     "husky": "^0.14.3",
     "lint-staged": "^6.1.0",
-    "mocha": "^5.0.0",
+    "mocha": "^5.0.1",
     "nyc": "^11.4.1",
     "proxyquire": "^1.8.0",
-    "sinon": "^4.2.2"
+    "sinon": "^4.3.0"
   },
   "keywords": [
     "favicon",
