@@ -18,7 +18,7 @@
     "precommit": "lint-staged"
   },
   "dependencies": {
-    "@faviator/create-svg-favicon": "^0.2.0",
+    "@faviator/create-svg-favicon": "^1.0.0",
     "commander": "^2.14.1",
     "convert-svg-to-jpeg": "^0.4.0",
     "convert-svg-to-png": "^0.4.0"
@@ -26,11 +26,11 @@
   "devDependencies": {
     "@ycm.jason/eslint-config": "^1.1.0",
     "codecov": "^3.0.0",
-    "eslint": "^4.17.0",
+    "eslint": "^4.18.1",
     "husky": "^0.14.3",
-    "lint-staged": "^6.1.0",
+    "lint-staged": "^7.0.0",
     "mocha": "^5.0.1",
-    "nyc": "^11.4.1",
+    "nyc": "^11.5.0",
     "proxyquire": "^1.8.0",
     "sinon": "^4.3.0"
   },
