@@ -60,4 +60,13 @@ describe('faviator [index.js]', function() {
     });
 
   });
+
+  describe('.faviatorIconConfig', function() {
+
+    it('should not be undefined', function() {
+      assert(typeof this.faviator.faviatorIconConfig === 'object');
+      assert(this.faviator.faviatorIconConfig !== null);
+    });
+
+  });
 });

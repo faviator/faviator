@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 const fs = require('fs');
-const { extname } = require('path');
+const { extname, resolve } = require('path');
 
-const program = require('commander');
+let program = require('commander');
 
 const pkg = require('../package.json');
 
@@ -11,39 +11,47 @@ const faviator = require('../index');
 program
   .version(pkg.version)
   .description(pkg.description)
-  .option('-s, --size <n>', 'Width and height of the favicon', 16)
-  .option('-t, --text <value>', 'Text in the favicon', 'F')
-  .option('--dx <n>', 'Move text horizontally', 0)
-  .option('--dy <n>', 'Move text vertically', 0)
-  .option('--font-size <n>', 'Font size of the text', 80)
-  .option('-f, --font-family <value>', 'Font family; please choose from Google Fonts', 'Dancing Script')
-  .option('-c, --font-color <value>', 'Color name/hex/rgb', 'white')
-  .option('-B, --background-color <value>', 'Background color of favicon', 'rgb(219, 59, 211)')
-  .option('--border-width <n>', 'Width of the border', 5)
-  .option('-b, --border-color <value>', 'Color of the border', '#0D1423')
-  .option('-R, --border-radius <n>', 'Short hand to set rx and ry', '5%')
+  .option('-s, --size <n>', 'Width and height of the favicon')
+  .option('-t, --text <value>', 'Text in the favicon')
+  .option('--dx <n>', 'Move text horizontally')
+  .option('--dy <n>', 'Move text vertically')
+  .option('--font-size <n>', 'Font size of the text')
+  .option('-f, --font-family <value>', 'Font family; please choose from Google Fonts')
+  .option('--font-color <value>', 'Color name/hex/rgb')
+  .option('-B, --background-color <value>', 'Background color of favicon')
+  .option('--border-width <n>', 'Width of the border')
+  .option('-b, --border-color <value>', 'Color of the border')
+  .option('-R, --border-radius <n>', 'Short hand to set rx and ry')
   .option('--rx <n>', 'x-axis border radius')
   .option('--ry <n>', 'y-axis border radius')
+  .option('-c, --config <path>', 'use a config file to draw')
   .option('-o, --output <path>', 'If not specified, svg will be printed to stdout. You can use .svg/.jpeg/.jpg/.png extensions.')
   .parse(process.argv);
 
-function main(options) {
+async function main(options) {
   const { output } = options;
 
-  if (!options.output) {
-    return faviator.svg(options).then(buffer => buffer.toString()).then(console.log).catch(console.error);
-  }
+  if (!options.output) return console.log((await faviator.svg(options)).toString());
 
   const ext = extname(output);
 
   if (output && !['.svg', '.jpeg', '.jpg', '.png'].includes(ext)) {
     console.error('\n  error: <path> extension must be .svg/.jpeg/.jpg/.png in output\n');
     process.exit(1);
+    return;
   }
 
   console.log(`Writting to ${output}...`);
-  faviator[ext.substring(1)](options).then(buffer => fs.writeFileSync(output, buffer));
+  fs.writeFileSync(output, (await faviator[ext.substring(1)](options)));
 }
 
 if (process.argv.length <= 2) program.help();
-main(program);
+
+if (program.config) {
+  program = {
+    ...program,
+    ...require(resolve(process.cwd(), program.config)),
+  };
+}
+
+main(program).catch(console.error);

@@ -1,0 +1,39 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 100 100">
+  <defs>
+    <style type="text/css">
+      @import url('https://fonts.googleapis.com/css?family=Roboto');
+    </style>
+  </defs>
+
+<rect x="5.75"
+  y="5.75"
+  rx="18.5"
+  ry="18.5"
+  width="88.5"
+  height="88.5"
+  fill="navy"></rect>
+
+<text x="50"
+  y="50"
+  dx="0"
+  dy="19.5"
+  width="160"
+  height="160"
+  fill="skyblue"
+  font-size="32"
+  font-family="Roboto"
+  text-anchor="middle"
+  alignment-baseline="central">Fav</text>
+
+<rect x="5.75"
+  y="5.75"
+  rx="18.5"
+  ry="18.5"
+  width="88.5"
+  height="88.5"
+  fill-opacity="0"
+  stroke="skyblue"
+  stroke-width="11.5"></rect>
+</svg>

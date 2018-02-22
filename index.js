@@ -14,3 +14,4 @@ faviator.png = (...args) => svg2png(createSvgFavicon(...args));
 
 module.exports = faviator;
 module.exports.default = faviator;
+module.exports.faviatorIconConfig = createSvgFavicon.faviatorIconConfig;
