@@ -191,6 +191,19 @@ const faviator = require('faviator');
 faviator.png(config).then(buffer => fs.writeFileSync('favicon.png', buffer));
 ```
 
+## How to use the icon generated?
+
+After generating the icon, you could simply add the following line in your `<head>` tag.
+
+PNG:
+```html
+<link rel="icon" href="favicon.png" type="image/png">
+```
+
+JPG:
+```html
+<link rel="icon" href="favicon.jpg" type="image/jpg">
+```
 
 ## Author
 Jason Yu <me@ycmjason.com>
