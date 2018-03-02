@@ -6,7 +6,7 @@
   "scripts": {
     "preversion": "git checkout master && git merge --squash dev && npm test",
     "version": "git add -A",
-    "postversion": "git checkout - && git merge master -m 'Merge with master' && git push",
+    "postversion": "git checkout - && git merge master -X theirs -m 'Merge with master' && git push",
     "prepublishOnly": "git checkout master",
     "postpublish": "git push && git push --tags && git checkout - && git push",
     "\n# TESTING SCRIPTS:": "",
