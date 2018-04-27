@@ -53,6 +53,8 @@ npm install --save-dev faviator
     -h, --help                      output usage information
 ```
 
+--------
+
 By default, faviator will print the xml of the svg to stdout. 
 
 Example:
@@ -99,9 +101,9 @@ Example:
 </svg>
 ```
 
-which corresponds to this icon:
-
 ![0.png](example/0.svg)
+
+-----
 
 You can export the svg/jpeg/png to a file with the `-o` flag.
 ```
@@ -118,6 +120,10 @@ You can export the svg/jpeg/png to a file with the `-o` flag.
 1.png:
 
 ![1.png](example/1.png)
+
+-------
+
+You should also save your config to a json file so that you can reproduce your design.
 
 ```
 > faviator -c path/to/config.json \
