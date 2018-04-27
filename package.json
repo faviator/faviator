@@ -1,12 +1,12 @@
 {
   "name": "faviator",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A simple easy favicon generator.",
   "main": "index.js",
   "scripts": {
     "preversion": "git checkout master && git merge --squash dev && npm test",
     "version": "git add -A",
-    "postversion": "git checkout - && git merge master -m 'Merge with master' && git push",
+    "postversion": "git checkout - && git merge master -X theirs -m 'Merge with master' && git push",
     "prepublishOnly": "git checkout master",
     "postpublish": "git push && git push --tags && git checkout - && git push",
     "\n# TESTING SCRIPTS:": "",
@@ -19,18 +19,18 @@
   },
   "dependencies": {
     "@faviator/create-svg-favicon": "^1.1.0",
-    "commander": "^2.14.1",
+    "commander": "^2.15.1",
     "convert-svg-to-jpeg": "^0.4.0",
     "convert-svg-to-png": "^0.4.0"
   },
   "devDependencies": {
-    "@ycm.jason/eslint-config": "^1.1.0",
-    "codecov": "^3.0.0",
-    "eslint": "^4.18.1",
+    "@ycm.jason/eslint-config": "^1.2.0",
+    "codecov": "^3.0.1",
+    "eslint": "^4.19.1",
     "husky": "^0.14.3",
-    "lint-staged": "^7.0.0",
-    "mocha": "^5.0.1",
-    "nyc": "^11.5.0",
+    "lint-staged": "^7.0.5",
+    "mocha": "^5.1.1",
+    "nyc": "^11.7.1",
     "proxyquire": "^1.8.0",
     "sinon": "^4.4.2"
   },
