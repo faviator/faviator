@@ -101,7 +101,7 @@ Example:
 </svg>
 ```
 
-![0.png](example/0.svg)
+![0.svg](example/0.svg)
 
 -----
 
