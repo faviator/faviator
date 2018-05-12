@@ -1,0 +1,13 @@
+{
+  "size": 230,
+  "text": "F",
+  "dx": -2.5,
+  "dy": 2,
+  "fontSize": 70,
+  "fontFamily": "Dancing Script",
+  "fontColor": "#ffffff",
+  "backgroundColor": "#f5beb7",
+  "borderWidth": 3.5,
+  "borderColor": "#feeeec",
+  "borderRadius": 50
+}
