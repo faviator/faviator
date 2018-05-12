@@ -14,7 +14,7 @@ describe('faviator [index.js]', function() {
         convert: sinon.stub().resolves('some-png'),
       },
     };
-    this.faviator = proxyquire('../index', this.stubs);
+    this.faviator = proxyquire('../lib/index', this.stubs);
   });
 
   it('should call .svg', function(next) {

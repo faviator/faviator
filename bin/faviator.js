@@ -6,7 +6,7 @@ let program = require('commander');
 
 const pkg = require('../package.json');
 
-const faviator = require('../index');
+const faviator = require('../lib/index');
 
 program
   .version(pkg.version)
