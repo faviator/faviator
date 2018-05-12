@@ -13,7 +13,8 @@
     "coverage": "nyc report --reporter=lcov > coverage.lcov && codecov",
     "lint:js": "eslint .",
     "\n# HUSKY GIT HOOKS:": "",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "commitmsg": "validate-commit-msg"
   },
   "dependencies": {
     "@faviator/create-svg-favicon": "^1.1.0",
@@ -30,7 +31,8 @@
     "mocha": "^5.1.1",
     "nyc": "^11.7.1",
     "proxyquire": "^1.8.0",
-    "sinon": "^4.4.2"
+    "sinon": "^4.4.2",
+    "validate-commit": "^3.4.0"
   },
   "keywords": [
     "favicon",
