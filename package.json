@@ -23,15 +23,15 @@
     "convert-svg-to-png": "^0.4.0"
   },
   "devDependencies": {
-    "@ycm.jason/eslint-config": "^1.2.0",
-    "codecov": "^3.0.1",
+    "@ycm.jason/eslint-config": "^1.2.2",
+    "codecov": "^3.0.2",
     "eslint": "^4.19.1",
     "husky": "^0.14.3",
-    "lint-staged": "^7.0.5",
+    "lint-staged": "^7.1.0",
     "mocha": "^5.1.1",
-    "nyc": "^11.7.1",
-    "proxyquire": "^1.8.0",
-    "sinon": "^4.4.2",
+    "nyc": "^11.7.3",
+    "proxyquire": "^2.0.1",
+    "sinon": "^5.0.7",
     "validate-commit": "^3.4.0"
   },
   "keywords": [
