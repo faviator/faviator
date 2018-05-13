@@ -5,6 +5,7 @@ const sinon = require('sinon');
 const createSvgFavicon = require('@faviator/create-svg-favicon');
 
 describe('faviator [index.js]', function() {
+  this.timeout(5000);
   beforeEach(function() {
     this.stubs = {
       'convert-svg-to-jpeg': {
