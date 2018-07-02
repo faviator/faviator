@@ -18,9 +18,8 @@
   },
   "dependencies": {
     "@faviator/create-svg-favicon": "^1.1.1",
-    "commander": "^2.16.0",
-    "convert-svg-to-jpeg": "^0.4.0",
-    "convert-svg-to-png": "^0.4.0"
+    "@ycm.jason/svg-to-img": "^0.1.2",
+    "commander": "^2.16.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^7.0.0",
