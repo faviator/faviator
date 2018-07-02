@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 const fs = require('fs');
 const { extname, resolve } = require('path');
+const logger = require('@ycm.jason/logger')();
 
 let program = require('commander');
 
@@ -31,18 +32,26 @@ program
 async function main(options) {
   const { output } = options;
 
-  if (!options.output) return console.log((await faviator.svg(options)).toString());
+  if (!options.output) return logger.print((await faviator.svg(options)).toString());
 
   const ext = extname(output);
 
   if (output && !['.svg', '.jpeg', '.jpg', '.png'].includes(ext)) {
-    console.error('\n  error: <path> extension must be .svg/.jpeg/.jpg/.png in output\n');
+    logger.error('<path> extension must be .svg/.jpeg/.jpg/.png in output\n');
     process.exit(1);
     return;
   }
 
-  console.log(`Writting to ${output}...`);
-  fs.writeFileSync(output, (await faviator[ext.substring(1)](options)));
+  logger.info(`Writting to ${output}...`);
+  try {
+    fs.writeFileSync(output, await faviator[ext.substring(1)](options));
+  } catch (e) {
+    if (/Failed to fetch/.test(e.message)) {
+      logger.error('Failed to fetch. Please check you have internet connection and the font-family is correct (case-sensitive).');
+      return;
+    }
+    throw e;
+  }
 }
 
 if (process.argv.length <= 2) program.help();
