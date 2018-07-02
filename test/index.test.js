@@ -8,11 +8,9 @@ describe('faviator [index.js]', function() {
   this.timeout(5000);
   beforeEach(function() {
     this.stubs = {
-      'convert-svg-to-jpeg': {
-        convert: sinon.stub().resolves('some-jpeg'),
-      },
-      'convert-svg-to-png': {
-        convert: sinon.stub().resolves('some-png'),
+      '@ycm.jason/svg-to-img': {
+        jpeg: sinon.stub().resolves('some-jpeg'),
+        png: sinon.stub().resolves('some-png'),
       },
     };
     this.faviator = proxyquire('../lib/index', this.stubs);
@@ -40,10 +38,10 @@ describe('faviator [index.js]', function() {
       assert.equal(this.faviator.jpeg, this.faviator.jpg);
     });
 
-    it('should call convert-svg-to-jpeg.convert', function(next) {
+    it('should call svgToImg.jpeg', function(next) {
       this.faviator.jpg().then(v => {
         assert.equal(v, 'some-jpeg');
-        assert(this.stubs['convert-svg-to-jpeg'].convert.called);
+        assert(this.stubs['@ycm.jason/svg-to-img'].jpeg.called);
         next();
       });
     });
@@ -52,10 +50,10 @@ describe('faviator [index.js]', function() {
 
   describe('.png', function() {
 
-    it('should call convert-svg-to-png.convert', function(next) {
+    it('should call svgToImg.jpeg', function(next) {
       this.faviator.png().then(v => {
         assert.equal(v, 'some-png');
-        assert(this.stubs['convert-svg-to-png'].convert.called);
+        assert(this.stubs['@ycm.jason/svg-to-img'].png.called);
         next();
       });
     });
