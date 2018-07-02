@@ -3,8 +3,5 @@
     "es6": true,
     "node": true
   },
-  "parserOptions": {
-    "ecmaVersion": 2017
-  },
   "extends": "@ycm.jason/eslint-config"
 }
