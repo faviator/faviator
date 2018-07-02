@@ -110,7 +110,7 @@ You can export the svg/jpeg/png to a file with the `-o` flag.
 > faviator -s 160 \
            --text 'f' \
            --font-size '55' \
-           -f 'tangerine' \
+           -f 'Tangerine' \
            --dx '-5' \
            -R '50%' \
            --background-color 'rgb(37, 86, 209)' \
