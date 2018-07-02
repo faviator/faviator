@@ -107,13 +107,17 @@ Example:
 
 You can export the svg/jpeg/png to a file with the `-o` flag.
 ```
-> faviator -s 160 \
+> faviator --size '160' \
            --text 'f' \
-           --font-size '55' \
-           -f 'Tangerine' \
            --dx '-5' \
-           -R '50%' \
+           --dy '0' \
+           --font-size '55' \
+           --font-family 'Tangerine' \
+           --font-color '#75b7ff' \
            --background-color 'rgb(37, 86, 209)' \
+           --border-width '3.5' \
+           --border-color '#75b7ff' \
+           --border-radius '0' \
            -o example/1.png
 ```
 
