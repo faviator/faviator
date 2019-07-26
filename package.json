@@ -36,8 +36,7 @@
     "husky": "^3.0.1",
     "jest": "^24.8.0",
     "lint-staged": "^9.2.1",
-    "prettier": "^1.18.2",
-    "validate-commit": "^3.4.0"
+    "prettier": "^1.18.2"
   },
   "keywords": [
     "favicon",
@@ -48,7 +47,11 @@
   "author": "Jason Yu <me@ycmjason.com>",
   "license": "ISC",
   "lint-staged": {
-    "*.js": ["npm run lint:js", "npm run format", "git add"]
+    "*.js": [
+      "npm run lint:js",
+      "npm run format",
+      "git add"
+    ]
   },
   "bin": {
     "faviator": "./bin/faviator.js"
