@@ -8,13 +8,18 @@
     "version": "git add -A",
     "postpublish": "git push --all && git push --tags",
     "\n# TESTING SCRIPTS:": "",
-    "test": "nyc mocha --recursive",
-    "test:watch": "mocha --recursive --watch",
-    "coverage": "nyc report --reporter=lcov > coverage.lcov && codecov",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "coverage": "codecov",
     "lint:js": "eslint .",
-    "\n# HUSKY GIT HOOKS:": "",
-    "precommit": "lint-staged",
-    "commitmsg": "commitlint -e $GIT_PARAMS"
+    "\n# FORMATS:": "",
+    "format": "prettier --write **/*.js"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -e $GIT_PARAMS"
+    }
   },
   "dependencies": {
     "@faviator/create-svg-favicon": "^1.1.1",
@@ -29,12 +34,9 @@
     "codecov": "^3.5.0",
     "eslint": "^6.1.0",
     "husky": "^3.0.1",
+    "jest": "^24.8.0",
     "lint-staged": "^9.2.1",
-    "mocha": "^6.2.0",
-    "nyc": "^14.1.1",
     "prettier": "^1.18.2",
-    "proxyquire": "^2.1.1",
-    "sinon": "^7.3.2",
     "validate-commit": "^3.4.0"
   },
   "keywords": [
@@ -46,7 +48,7 @@
   "author": "Jason Yu <me@ycmjason.com>",
   "license": "ISC",
   "lint-staged": {
-    "*.js": "npm run lint:js"
+    "*.js": ["npm run lint:js", "npm run format", "git add"]
   },
   "bin": {
     "faviator": "./bin/faviator.js"

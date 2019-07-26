@@ -17,7 +17,10 @@ program
   .option('--dx <n>', 'Move text horizontally')
   .option('--dy <n>', 'Move text vertically')
   .option('--font-size <n>', 'Font size of the text')
-  .option('-f, --font-family <value>', 'Font family; please choose from Google Fonts')
+  .option(
+    '-f, --font-family <value>',
+    'Font family; please choose from Google Fonts',
+  )
   .option('--font-color <value>', 'Color name/hex/rgb')
   .option('-B, --background-color <value>', 'Background color of favicon')
   .option('--border-width <n>', 'Width of the border')
@@ -26,13 +29,17 @@ program
   .option('--rx <n>', 'x-axis border radius')
   .option('--ry <n>', 'y-axis border radius')
   .option('-c, --config <path>', 'use a config file to draw')
-  .option('-o, --output <path>', 'If not specified, svg will be printed to stdout. You can use .svg/.jpeg/.jpg/.png extensions.')
+  .option(
+    '-o, --output <path>',
+    'If not specified, svg will be printed to stdout. You can use .svg/.jpeg/.jpg/.png extensions.',
+  )
   .parse(process.argv);
 
 async function main(options) {
   const { output } = options;
 
-  if (!options.output) return logger.print((await faviator.svg(options)).toString());
+  if (!options.output)
+    return logger.print((await faviator.svg(options)).toString());
 
   const ext = extname(output);
 
@@ -47,7 +54,9 @@ async function main(options) {
     fs.writeFileSync(output, await faviator[ext.substring(1)](options));
   } catch (e) {
     if (/Failed to fetch/.test(e.message)) {
-      logger.error('Failed to fetch. Please check you have internet connection and the font-family is correct (case-sensitive).');
+      logger.error(
+        'Failed to fetch. Please check you have internet connection and the font-family is correct (case-sensitive).',
+      );
       return;
     }
     throw e;
