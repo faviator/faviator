@@ -22,6 +22,7 @@ program
     'Font family; please choose from Google Fonts',
   )
   .option('--font-color <value>', 'Color name/hex/rgb')
+  .option('--font-weight <value>', 'Font weight')
   .option('-B, --background-color <value>', 'Background color of favicon')
   .option('--border-width <n>', 'Width of the border')
   .option('-b, --border-color <value>', 'Color of the border')

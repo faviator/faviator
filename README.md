@@ -41,6 +41,7 @@ npm install --save-dev faviator
     --dy <n>                        Move text vertically
     --font-size <n>                 Font size of the text
     -f, --font-family <value>       Font family; please choose from Google Fonts
+    --font-weight <value>           Font weight; please choose from Google Fonts
     --font-color <value>            Color name/hex/rgb
     -B, --background-color <value>  Background color of favicon
     --border-width <n>              Width of the border
@@ -55,17 +56,17 @@ npm install --save-dev faviator
 
 --------
 
-By default, faviator will print the xml of the svg to stdout. 
+By default, faviator will print the xml of the svg to stdout.
 
 Example:
 ```
-> faviator --size '160' --text 'Fav' --dy '19.5' --font-size '32' --font-family 'Roboto' --font-color 'skyblue' --background-color 'navy' --border-width '11.5' --border-color 'skyblue' --border-radius '18.5'
+> faviator --size '160' --text 'Fav' --dy '19.5' --font-size '32' --font-family 'Roboto' --font-color 'skyblue' --font-weight '700' --background-color 'navy' --border-width '11.5' --border-color 'skyblue' --border-radius '18.5'
 <?xml version="1.0" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 100 100">
   <defs>
     <style type="text/css">
-      @import url('https://fonts.googleapis.com/css?family=Roboto');
+      @import url('https://fonts.googleapis.com/css?family=Roboto:700');
     </style>
   </defs>
 
@@ -114,6 +115,7 @@ You can export the svg/jpeg/png to a file with the `-o` flag.
            --font-size '55' \
            --font-family 'Tangerine' \
            --font-color '#75b7ff' \
+           --font-weight '700' \
            --background-color 'rgb(37, 86, 209)' \
            --border-width '3.5' \
            --border-color '#75b7ff' \
@@ -148,13 +150,14 @@ The config object takes in the following keys and generate the favicon correspon
 The following values are the default values if it is not defined. This defines the faviator's logo.
 ```javascript
 const config = {
-  size: 16,            // the width and height of the generated image (in px) 
+  size: 16,            // the width and height of the generated image (in px)
   text: '',
   dx: 0,               // move the text from the 'center' horizontally
   dy: 0,               // move the text from the 'center' vertically
   fontSize: 0,
   fontFamily: '',      // a font from Google Font
   fontColor: '',
+  fontWeight: '',      // the weight of the font from Google Font
   backgroundColor: '',
   borderWidth: 0,
   borderColor: '',
@@ -179,21 +182,21 @@ faviator.svg(config)
 
 ### faviator.jpeg(config) / faviator.jpg(config)
 
-Example: 
+Example:
 ```
 const fs = require('fs');
 const faviator = require('faviator');
 
 faviator.jpeg(config).then(buffer => fs.writeFileSync('favicon.jpg', buffer));
 
-// or 
+// or
 
 faviator.jpg(config).then(buffer => fs.writeFileSync('favicon.jpg', buffer));
 ```
 
 ### faviator.png(config)
 
-Example: 
+Example:
 ```
 const fs = require('fs');
 const faviator = require('faviator');
