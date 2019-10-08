@@ -49,7 +49,7 @@ async function main(options) {
     return;
   }
 
-  logger.info(`Writting to ${output}...`);
+  logger.info(`Writing to ${output}...`);
   try {
     fs.writeFileSync(output, await faviator[ext.substring(1)](options));
   } catch (e) {
