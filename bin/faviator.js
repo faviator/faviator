@@ -5,13 +5,13 @@ const logger = require('@ycm.jason/logger')();
 
 let program = require('commander');
 
-const pkg = require('../package.json');
+const { description, version } = require('../package.json');
 
 const faviator = require('../lib/index');
 
 program
-  .version(pkg.version)
-  .description(pkg.description)
+  .version(version)
+  .description(description)
   .option('-s, --size <n>', 'Width and height of the favicon')
   .option('-t, --text <value>', 'Text in the favicon')
   .option('--dx <n>', 'Move text horizontally')
