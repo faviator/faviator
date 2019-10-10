@@ -22,6 +22,7 @@ program
     'Font family; please choose from Google Fonts',
   )
   .option('--font-color <value>', 'Color name/hex/rgb')
+  .option('--font-weight <value>', 'Font weight')
   .option('-B, --background-color <value>', 'Background color of favicon')
   .option('--border-width <n>', 'Width of the border')
   .option('-b, --border-color <value>', 'Color of the border')
@@ -55,7 +56,7 @@ async function main(options) {
   } catch (e) {
     if (/Failed to fetch/.test(e.message)) {
       logger.error(
-        'Failed to fetch. Please check you have internet connection and the font-family is correct (case-sensitive).',
+        'Failed to fetch. Please check you have internet connection, and the font-family (case-sensitive) and optional font-weight are correct.',
       );
       return;
     }
