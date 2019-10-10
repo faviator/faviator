@@ -22,7 +22,7 @@
     }
   },
   "dependencies": {
-    "@faviator/create-svg-favicon": "^1.1.1",
+    "@faviator/create-svg-favicon": "^1.2.0",
     "@ycm.jason/logger": "^0.1.5",
     "@ycm.jason/svg-to-img": "^0.1.4",
     "commander": "^3.0.2"
