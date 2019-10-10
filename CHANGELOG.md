@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.3.1
+- update @favicon/create-svg-icon for font-weight support
+
 ## 1.3.0
 - Add support for font weight
 
