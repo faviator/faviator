@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.3.0
+- Add support for font weight
+
 ## 1.2.0
 
 ### Feature
