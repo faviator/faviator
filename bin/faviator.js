@@ -56,7 +56,7 @@ async function main(options) {
   } catch (e) {
     if (/Failed to fetch/.test(e.message)) {
       logger.error(
-        'Failed to fetch. Please check you have internet connection and the font-family is correct (case-sensitive).',
+        'Failed to fetch. Please check you have internet connection, and the font-family (case-sensitive) and optional font-weight are correct.',
       );
       return;
     }
