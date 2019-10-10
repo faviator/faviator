@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.3.2
+- replace usage of `new Buffer` to `Buffer.from`
+
 ## 1.3.1
 - update @favicon/create-svg-icon for font-weight support
 
