@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.5.0
+- fix default export issue with createSvgFavicon
+
 ## 1.4.0
 - update dependencies
 
