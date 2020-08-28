@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.4.0
+- update dependencies
+
 ## 1.3.2
 - replace usage of `new Buffer` to `Buffer.from`
 
